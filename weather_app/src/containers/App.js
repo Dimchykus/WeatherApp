@@ -3,7 +3,7 @@ import {setItems} from"./../actions/weather"
 
 const mapStateToProps = (state) => {
     return {
-        //products: state.reducer.items,
+        items: state.reducer.items,
     }
 }
 

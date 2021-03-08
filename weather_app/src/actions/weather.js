@@ -1,6 +1,6 @@
 export const setItems = (items) => (
     {
-        type: "SET_ITEMS",
+        type: "SET_DATA",
         payload: items
     }
 )
