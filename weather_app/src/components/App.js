@@ -12,8 +12,9 @@ const api = {
 
 const getWeather = (props) => {
     const {setItem} = props;
-    const query = props.city
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${query}&APPID=${api.key}`)
+    const city = props.city
+    const country = props.country
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${api.key}`)
         .then(res => res.json())
         .then(res => {
             setItem(res)
@@ -61,7 +62,7 @@ class App extends React.Component {
                 <p className="title">Weather</p>
                 <input type="text" placeholder="country"
                        onChange={event => this.props.setCountryName(event.target.value)}/>
-                <input type="text" placeholder="city" onChange={event => {
+                <input type="text" placeholder="city"  onChange={event => {
                     this.props.setCityName(event.target.value);
                     this.props.setIsReady(false);
                 }}/>
