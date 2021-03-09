@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './Styles/App.css';
 import {connect} from "react-redux";
 import {setItem, setIsReady, setCityName, setCountryName} from "../actions/weather";
 import CityWeather from "./CityWeather";
@@ -58,7 +58,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <p>Weather</p>
+                <p className="title">Weather</p>
                 <input type="text" placeholder="country"
                        onChange={event => this.props.setCountryName(event.target.value)}/>
                 <input type="text" placeholder="city" onChange={event => {
