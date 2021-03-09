@@ -17,7 +17,9 @@ const getWeather = (props) => {
         .then(res => {setItem(res)
             props.setIsReady(true);
             console.log(res)
-        })
+        }).catch(function (error) {
+        console.error(error);
+    });
 
 
 
@@ -57,7 +59,7 @@ class App extends React.Component{
             <div>
                 <p>Weather</p>
                 <input type="text" placeholder="country" onChange={event => this.props.setCountryName(event.target.value)}/>
-                <input type="text" placeholder="city" onChange={event => this.props.setCityName(event.target.value)}/>
+                <input type="text" placeholder="city" onChange={event => {this.props.setCityName(event.target.value); this.props.setIsReady(false);}}/>
                 <button onClick={() => getWeather(this.props)}>weather1</button>
                 <button>weather2</button>
                 {
