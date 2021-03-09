@@ -1,5 +1,6 @@
 const initialState = {
-    weather: []
+    weather: null,
+    isReady: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -9,7 +10,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 weather: action.payload
             };
-
+        case  "SET_ISREADY":
+            return {
+                ...state,
+                isReady: action.payload
+            };
         default:
             return state;
     }

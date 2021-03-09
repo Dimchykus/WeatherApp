@@ -4,3 +4,9 @@ export const setItem = (weather) => (
         payload: weather
     }
 )
+export const setIsReady = (isReady) => (
+    {
+        type: "SET_ISREADY",
+        payload: isReady
+    }
+)

@@ -1,5 +1,6 @@
 
 const CityWeather = (props) => {
+    const {name, temp} = props;
     return (
         <div>
             <p>{props.name}</p>
