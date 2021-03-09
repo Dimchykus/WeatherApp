@@ -1,6 +1,13 @@
 .App {
   text-align: center;
 }
+body{
+  background-image: url("https://www.maketecheasier.com/assets/uploads/2020/06/Featured-Image-Live-Weather-Wallpapers-Android.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 .App-logo {
   height: 40vmin;

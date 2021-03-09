@@ -1,12 +1,13 @@
 import React from 'react';
-import '../App.css';
+import './App.css';
 import {connect} from "react-redux";
 import {setItem, setIsReady, setCityName, setCountryName} from "../actions/weather";
 import CityWeather from "./CityWeather";
 import axios from "axios";
+
 const api = {
-    key:"5cd66aa98df41dded9c26061435ff900",
-    base:"https://openweathermap.org/data/2.5/weather"
+    key: "5cd66aa98df41dded9c26061435ff900",
+    base: "https://openweathermap.org/data/2.5/weather"
 }
 
 const getWeather = (props) => {
@@ -14,13 +15,13 @@ const getWeather = (props) => {
     const query = props.city
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${query}&APPID=${api.key}`)
         .then(res => res.json())
-        .then(res => {setItem(res)
+        .then(res => {
+            setItem(res)
             props.setIsReady(true);
             console.log(res)
         }).catch(function (error) {
         console.error(error);
     });
-
 
 
     // const options = {
@@ -52,18 +53,22 @@ const getWeather = (props) => {
 
 }
 
-class App extends React.Component{
+class App extends React.Component {
 
-    render(){
-        return(
-            <div>
+    render() {
+        return (
+            <div className="App">
                 <p>Weather</p>
-                <input type="text" placeholder="country" onChange={event => this.props.setCountryName(event.target.value)}/>
-                <input type="text" placeholder="city" onChange={event => {this.props.setCityName(event.target.value); this.props.setIsReady(false);}}/>
+                <input type="text" placeholder="country"
+                       onChange={event => this.props.setCountryName(event.target.value)}/>
+                <input type="text" placeholder="city" onChange={event => {
+                    this.props.setCityName(event.target.value);
+                    this.props.setIsReady(false);
+                }}/>
                 <button onClick={() => getWeather(this.props)}>weather1</button>
                 <button>weather2</button>
                 {
-                    this.props.isReady==true ? <CityWeather {...this.props.weather}/> : <div>none</div>
+                    this.props.isReady == true ? <CityWeather {...this.props.weather}/> : <div>none</div>
                 }
             </div>
         )
