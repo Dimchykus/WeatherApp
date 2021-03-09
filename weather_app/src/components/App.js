@@ -2,6 +2,8 @@ import React from 'react';
 import '../App.css';
 import {connect} from "react-redux";
 import {setItem} from "../actions/weather";
+import CityWeather from "./CityWeather";
+
 const api = {
     key:"5cd66aa98df41dded9c26061435ff900",
     base:"https://openweathermap.org/data/2.5/weather"
@@ -35,6 +37,7 @@ class App extends React.Component{
                 <input type="text" placeholder="city"/>
                 <button>weather1</button>
                 <button>weather2</button>
+                <CityWeather {...this.props.weather}/>
             </div>
         )
     }
@@ -43,7 +46,7 @@ class App extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        items: state.weather_reducer.items,
+        weather: state.weather_reducer.weather,
     }
 }
 

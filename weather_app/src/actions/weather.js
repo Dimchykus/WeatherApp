@@ -1,6 +1,6 @@
-export const setItem = (items) => (
+export const setItem = (weather) => (
     {
         type: "SET_DATA",
-        payload: items
+        payload: weather
     }
 )

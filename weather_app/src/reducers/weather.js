@@ -1,5 +1,5 @@
 const initialState = {
-    items: []
+    weather: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -7,7 +7,7 @@ const reducer = (state = initialState, action) => {
         case  "SET_DATA":
             return {
                 ...state,
-                items: action.payload
+                weather: action.payload
             };
 
         default:
