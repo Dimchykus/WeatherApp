@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 import {connect} from "react-redux";
-import {setItem, setIsReady} from "../actions/weather";
+import {setItem, setIsReady, setCityName, setCountryName} from "../actions/weather";
 import CityWeather from "./CityWeather";
 import axios from "axios";
 const api = {
@@ -11,7 +11,7 @@ const api = {
 
 const getWeather = (props) => {
     const {setItem} = props;
-    const query = "Lviv"
+    const query = props.city
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${query}&APPID=${api.key}`)
         .then(res => res.json())
         .then(res => {setItem(res)
@@ -56,8 +56,8 @@ class App extends React.Component{
         return(
             <div>
                 <p>Weather</p>
-                <input type="text" placeholder="country"/>
-                <input type="text" placeholder="city"/>
+                <input type="text" placeholder="country" onChange={event => this.props.setCountryName(event.target.value)}/>
+                <input type="text" placeholder="city" onChange={event => this.props.setCityName(event.target.value)}/>
                 <button onClick={() => getWeather(this.props)}>weather1</button>
                 <button>weather2</button>
                 {
@@ -73,6 +73,8 @@ const mapStateToProps = (state) => {
     return {
         weather: state.weather_reducer.weather,
         isReady: state.weather_reducer.isReady,
+        city: state.weather_reducer.city,
+        country: state.weather_reducer.country,
     }
 }
 
@@ -80,6 +82,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         setItem: products => dispatch(setItem(products)),
         setIsReady: Ready => dispatch(setIsReady(Ready)),
+        setCityName: City => dispatch(setCityName(City)),
+        setCountryName: Country => dispatch(setCountryName(Country)),
     }
 
 }

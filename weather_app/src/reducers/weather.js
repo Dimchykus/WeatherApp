@@ -1,6 +1,8 @@
 const initialState = {
     weather: null,
-    isReady: false
+    isReady: false,
+    city: "",
+    country: ""
 }
 
 const reducer = (state = initialState, action) => {
@@ -14,6 +16,16 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isReady: action.payload
+            };
+        case  "SET_CITY_NAME":
+            return {
+                ...state,
+                city: action.payload
+            };
+        case  "SET_COUNTRY_NAME":
+            return {
+                ...state,
+                country: action.payload
             };
         default:
             return state;

@@ -10,3 +10,15 @@ export const setIsReady = (isReady) => (
         payload: isReady
     }
 )
+export const setCityName = (City) => (
+    {
+        type: "SET_CITY_NAME",
+        payload: City
+    }
+)
+export const setCountryName = (Country) => (
+    {
+        type: "SET_COUNTRY_NAME",
+        payload: Country
+    }
+)
