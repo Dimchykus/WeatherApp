@@ -17,11 +17,16 @@ const getWeather = (props) => {
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${api.key}`)
         .then(res => res.json())
         .then(res => {
-            setItem(res)
-            props.setIsReady(true);
-            console.log(res)
+            if(res.cod != 200){
+                props.setIsReady(false);
+            }else{
+                setItem(res)
+                props.setIsReady(true);
+                console.log(res)
+            }
         }).catch(function (error) {
         console.error(error);
+        props.setIsReady(false);
     });
 
 
