@@ -14,7 +14,7 @@ const getWeather = (props) => {
     const {setItem} = props;
     const city = props.city
     const country = props.country
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${api.key}`)
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${api.key}`)
         .then(res => res.json())
         .then(res => {
             if(res.cod != 200){
