@@ -1,8 +1,8 @@
 import React from 'react';
-import './Styles/App.css';
+import './App.css';
 import {connect} from "react-redux";
 import {setItem, setIsReady, setCityName, setCountryName} from "../actions/weather";
-import CityWeather from "./CityWeather";
+import CityWeather from "./OpenWeather/CityWeather";
 import {FetchData} from "../api";
 
 // const api = {
