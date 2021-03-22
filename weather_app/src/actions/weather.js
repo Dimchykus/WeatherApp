@@ -1,9 +1,11 @@
-export const setItem = (weather) => (
-    {
+import {FetchData} from "./../api"
+
+export const setItem = (weather) => {
+    return{
         type: "SET_DATA",
         payload: weather
     }
-)
+}
 export const setIsReady = (isReady) => (
     {
         type: "SET_ISREADY",

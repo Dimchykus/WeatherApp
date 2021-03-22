@@ -3,61 +3,61 @@ import './Styles/App.css';
 import {connect} from "react-redux";
 import {setItem, setIsReady, setCityName, setCountryName} from "../actions/weather";
 import CityWeather from "./CityWeather";
-import axios from "axios";
+import {FetchData} from "../api";
 
-const api = {
-    key: "5cd66aa98df41dded9c26061435ff900",
-    base: "https://openweathermap.org/data/2.5/weather"
-}
+// const api = {
+//     key: "5cd66aa98df41dded9c26061435ff900",
+//     base: "https://openweathermap.org/data/2.5/weather"
+// }
 
-const getWeather = (props) => {
-    const {setItem} = props;
-    const city = props.city
-    const country = props.country
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${api.key}`)
-        .then(res => res.json())
-        .then(res => {
-            if(res.cod != 200){
-                props.setIsReady(false);
-            }else{
-                setItem(res)
-                props.setIsReady(true);
-                console.log(res)
-            }
-        }).catch(function (error) {
-        console.error(error);
-        props.setIsReady(false);
-    });
-
-
-    // const options = {
-    //     method: 'GET',
-    //     url: 'https://community-open-weather-map.p.rapidapi.com/weather',
-    //     params: {
-    //         q: 'Lviv,ua',
-    //         lat: '0',
-    //         lon: '0',
-    //         callback: 'test',
-    //         id: '2172797',
-    //         lang: 'null',
-    //         units: '"metric" or "imperial"',
-    //         mode: 'xml, html'
-    //     },
-    //     headers: {
-    //         'x-rapidapi-key': 'fcbcb60977mshdc92cf776f462e7p11e953jsna531cfdb9d21',
-    //         'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com'
-    //     }
-    // };
-    //
-    // axios.request(options).then(function (response) {
-    //     const obj = JSON.parse(response.data);
-    //     props.setItem(response)
-    //     console.log(obj);
-    // }).catch(function (error) {
-    //     console.error(error);
-    // });
-
-}
+// const getWeather = (props) => {
+//     const {setItem} = props;
+//     const city = props.city
+//     const country = props.country
+//
+//  fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${api.key}`)
+//             .then(res => res.json())
+//             .then(res => {
+//                 if(res.cod != 200){
+//                     props.setIsReady(false);
+//                 }else{
+//                     setItem(res)
+//                     props.setIsReady(true);
+//                     console.log(res)
+//                 }
+//             }).catch(function (error) {
+//             console.error(error);
+//             props.setIsReady(false);
+//         });
+//
+//     // const options = {
+//     //     method: 'GET',
+//     //     url: 'https://community-open-weather-map.p.rapidapi.com/weather',
+//     //     params: {
+//     //         q: 'Lviv,ua',
+//     //         lat: '0',
+//     //         lon: '0',
+//     //         callback: 'test',
+//     //         id: '2172797',
+//     //         lang: 'null',
+//     //         units: '"metric" or "imperial"',
+//     //         mode: 'xml, html'
+//     //     },
+//     //     headers: {
+//     //         'x-rapidapi-key': 'fcbcb60977mshdc92cf776f462e7p11e953jsna531cfdb9d21',
+//     //         'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com'
+//     //     }
+//     // };
+//     //
+//     // axios.request(options).then(function (response) {
+//     //     const obj = JSON.parse(response.data);
+//     //     props.setItem(response)
+//     //     console.log(obj);
+//     // }).catch(function (error) {
+//     //     console.error(error);
+//     // });
+//
+// }
 
 class App extends React.Component {
 
@@ -71,7 +71,7 @@ class App extends React.Component {
                     this.props.setCityName(event.target.value);
                     this.props.setIsReady(false);
                 }}/>
-                <button onClick={() => getWeather(this.props)}>weather1</button>
+                <button onClick={() => this.props.FetchData(this.props)}>weather1</button>
                 <button>weather2</button>
                 {
                     this.props.isReady == true ? <CityWeather {...this.props.weather}/> : <div>none</div>
@@ -93,7 +93,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setItem: products => dispatch(setItem(products)),
+        FetchData: (city, country) => dispatch(FetchData(city, country)),
         setIsReady: Ready => dispatch(setIsReady(Ready)),
         setCityName: City => dispatch(setCityName(City)),
         setCountryName: Country => dispatch(setCountryName(Country)),
