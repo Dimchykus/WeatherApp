@@ -72,7 +72,7 @@ class App extends React.Component {
                     this.props.setIsReady(false);
                 }}/>
                 <button onClick={() => this.props.FetchData(this.props)}>weather1</button>
-                <button>weather2</button>
+                <button onClick={() => this.props.FetchDataAerisWeather(this.props)}>weather2</button>
                 {
                     this.props.isReady == true ? <CityWeather {...this.props.weather}/> : <div>none</div>
                 }
