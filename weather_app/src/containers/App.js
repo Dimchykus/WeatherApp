@@ -3,7 +3,7 @@
 // import {connect} from "react-redux";
 
 import {FetchData, FetchDataAerisWeather} from "../api";
-import {setCityName, setCountryName, setIsReady} from "../actions/weather";
+import {setCityName, setCountryName, setIsReady, switchWeather} from "../actions/weather";
 import {connect} from "react-redux";
 import App from "../components/App";
 
@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
         isReady: state.weather_reducer.isReady,
         city: state.weather_reducer.city,
         country: state.weather_reducer.country,
+        switchWeather: state.weather_reducer.weather_api,
     }
 }
 
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch) => {
         setIsReady: Ready => dispatch(setIsReady(Ready)),
         setCityName: City => dispatch(setCityName(City)),
         setCountryName: Country => dispatch(setCountryName(Country)),
+        setSwitchWeather: num => dispatch(switchWeather(num)),
     }
 
 }

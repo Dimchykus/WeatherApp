@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {setItem, setIsReady, setCityName, setCountryName} from "../actions/weather";
 import CityWeather from "./OpenWeather/CityWeather";
 import {FetchData} from "../api";
+import AerisWeather from "./AerisWeather/AerisWeather";
 
 // const api = {
 //     key: "5cd66aa98df41dded9c26061435ff900",
@@ -71,10 +72,12 @@ class App extends React.Component {
                     this.props.setCityName(event.target.value);
                     this.props.setIsReady(false);
                 }}/>
-                <button onClick={() => this.props.FetchData(this.props)}>weather1</button>
-                <button onClick={() => this.props.FetchDataAerisWeather(this.props)}>weather2</button>
+                <button onClick={() => (this.props.FetchData(this.props), this.props.setSwitchWeather(0))}>weather1</button>
+                <button onClick={() => (this.props.FetchDataAerisWeather(this.props), this.props.setSwitchWeather(1))}>weather2</button>
                 {
-                    this.props.isReady == true ? <CityWeather {...this.props.weather}/> : <div>none</div>
+
+                    this.props.isReady != true ? <div>none</div>: (this.props.switchWeather == 0 ?
+                        <CityWeather {...this.props.weather}/> : <AerisWeather  {...this.props.weather}/>)
                 }
             </div>
         )

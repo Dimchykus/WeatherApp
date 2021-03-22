@@ -2,7 +2,8 @@ const initialState = {
     weather: null,
     isReady: false,
     city: "",
-    country: ""
+    country: "",
+    weather_api: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -26,6 +27,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 country: action.payload
+            };
+        case  "CHANGE_WEATHER":
+            return {
+                ...state,
+                weather_api: action.payload
             };
         default:
             return state;

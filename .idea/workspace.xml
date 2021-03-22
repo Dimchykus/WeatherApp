@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="654a820a-8eda-468d-bbce-544ad3c120b3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/weather_app/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_app/src/components/CityWeather.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/OpenWeather/CityWeather.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_app/src/components/Styles/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_app/src/components/Styles/CityWeather.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/OpenWeather/CityWeather.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/src/actions/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/actions/weather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/src/components/AerisWeather/AerisWeather.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/AerisWeather/AerisWeather.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/src/components/OpenWeather/CityWeather.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/OpenWeather/CityWeather.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/src/components/OpenWeather/CityWeather.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/OpenWeather/CityWeather.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/containers/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/src/reducers/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/reducers/weather.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,14 +32,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sample" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Progects\React_Js\WeatherApp\weather_app\src\components\Styles" />
       <recent name="E:\Progects\React_Js\WeatherApp\weather_app\src\components" />
+      <recent name="E:\Progects\React_Js\WeatherApp\weather_app\src\components\OpenWeather" />
+      <recent name="E:\Progects\React_Js\WeatherApp\weather_app\src\components\Styles" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -56,7 +65,9 @@
       <workItem from="1616337948907" duration="1566000" />
       <workItem from="1616356678818" duration="804000" />
       <workItem from="1616406366681" duration="5551000" />
-      <workItem from="1616427893314" duration="431000" />
+      <workItem from="1616427893314" duration="5189000" />
+      <workItem from="1616442987457" duration="61000" />
+      <workItem from="1616443050815" duration="4743000" />
     </task>
     <servers />
   </component>

@@ -24,3 +24,9 @@ export const setCountryName = (Country) => (
         payload: Country
     }
 )
+export const switchWeather = (num) => (
+    {
+        type: "CHANGE_WEATHER",
+        payload: num
+    }
+)

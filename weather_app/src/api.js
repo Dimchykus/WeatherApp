@@ -1,5 +1,6 @@
 import {setIsReady, setItem} from "./actions/weather"
 import * as action from "./actions/weather"
+import {NodePath as axios} from "@babel/traverse";
 
 const api = {
     key: "5cd66aa98df41dded9c26061435ff900",
@@ -18,7 +19,6 @@ export const FetchData = ({city, country}) => {
                     dispatch(setIsReady(true));
                     console.log(res)
                 }
-
             }).catch(function (error) {
             console.error(error);
             return null;
@@ -29,29 +29,18 @@ export const FetchData = ({city, country}) => {
 export const FetchDataAerisWeather = ({city}) => {
     return dispatch => {
         console.log("here")
-        //dispatch(setIsReady(false))
-        fetch(`http://api.weatherapi.com/v1/current.json?key=3be7e097d415461a939103600212203&q=London`, {mode: 'cors'})
-            .then(res => {
-                const {location} = res;
-                dispatch(setItem(location))
+        dispatch(setIsReady(false))
+        fetch(`http://api.weatherapi.com/v1/forecast.json?key=3be7e097d415461a939103600212203&q=${city}&days=3&aqi=no&alerts=no`)
+            .then(response => response.json())
+            .then((jsonData) => {
+                // jsonData is parsed json object received from url
+                dispatch(setItem(jsonData))
                 dispatch(setIsReady(true));
-                console.log(location)
-            }).catch(function (error) {
-            console.error(error);
-        })
-        //     .then(res => {
-        //         if (res.cod != 200){
-        //             //dispatch(setIsReady(false));
-        //         } else {
-        //             //dispatch(setItem(res))
-        //             //dispatch(setIsReady(true));
-        //             console.log(res)
-        //         }
-        //
-        //     }).catch(function (error) {
-        //     console.error(error);
-        //     return null;
-        //     //setIsReady(false);
-        // });
+                console.log(jsonData)
+            })
+            .catch((error) => {
+                // handle your errors here
+                console.error(error)
+            })
     }
 }
