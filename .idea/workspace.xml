@@ -3,13 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="654a820a-8eda-468d-bbce-544ad3c120b3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_app/src/actions/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/actions/weather.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather_app/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather_app/src/components/AerisWeather/AerisWeather.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/AerisWeather/AerisWeather.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/src/components/AerisWeather/WeatherDay.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/AerisWeather/WeatherDay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/src/components/AerisWeather/WeatherHourly.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/AerisWeather/WeatherHourly.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather_app/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weather_app/src/components/OpenWeather/CityWeather.css" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/OpenWeather/CityWeather.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather_app/src/components/OpenWeather/CityWeather.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/components/OpenWeather/CityWeather.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather_app/src/containers/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/containers/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weather_app/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/reducers/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/weather_app/src/reducers/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/weather_app/src/reducers/weather.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,10 +35,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Sample" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -67,7 +73,8 @@
       <workItem from="1616406366681" duration="5551000" />
       <workItem from="1616427893314" duration="5189000" />
       <workItem from="1616442987457" duration="61000" />
-      <workItem from="1616443050815" duration="4743000" />
+      <workItem from="1616443050815" duration="4990000" />
+      <workItem from="1616492465604" duration="2010000" />
     </task>
     <servers />
   </component>
